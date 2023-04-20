@@ -1,12 +1,11 @@
 package ru.rt_inform
 
 class TestTaskGroovy {
-    static main(args) {
-        def list = [1, 3, 4, 5, 1, 5, 4]
-        println(associativeArray(list))
-    }
 
     static def associativeArray(list) {
+        if (list == null || list.isEmpty()){
+            throw new Exception("List is empty")
+        }
         def result = [:]
         for (int element : list) {
             if (result.containsKey(element)) {
